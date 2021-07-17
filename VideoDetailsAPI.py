@@ -7,8 +7,9 @@ api = Api(app)
 ## Taking arguments from PUT requests
 ## If any argumentsis not found while sending the PUT requests then None will automatically be added
 
+#To make the argument compulsary, just add the parameter required=True inside add_argument
 video_put_args = reqparse.RequestParser()
-video_put_args.add_argument("name",type=str, help="Name of the video")
+video_put_args.add_argument("name",type=str, help="Name of the video",required=True)
 video_put_args.add_argument("views",type=int, help="Views of the video")
 video_put_args.add_argument("likes",type=int, help="Likes on the video")
 
